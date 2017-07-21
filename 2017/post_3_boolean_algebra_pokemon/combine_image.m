@@ -1,5 +1,5 @@
 function temp = combine_image(man,back)
-    man_b= im2bw(man,0.999);
+    man_b= im2bw(man,0.99);
 
     back_b = im2bw(back);
 
@@ -15,9 +15,10 @@ function temp = combine_image(man,back)
     sz= size(com);
     for i = 1:sz(1,1)
         for j=1:sz(1,2)
-            temp(i,j)= max(with_man(i,j),with_tree(i,j));
+            temp(i,j)=max(with_man(i,j),with_tree(i,j));
         end
     end
     
+    temp = uint8(temp);
 end
 

@@ -20,8 +20,10 @@ subplot(131);imshow(temp_r);axis image;
 subplot(132);imshow(temp_g);axis image;
 subplot(133);imshow(temp_b);axis image;
 
-final_image = zeros(size(man));
+final_image = uint8(zeros(size(man)));
 final_image(:,:,1)= temp_r;
 final_image(:,:,2)= temp_g;
 final_image(:,:,3)= temp_b;
 
+figure;
+imshow(final_image);
